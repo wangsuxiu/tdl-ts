@@ -1,14 +1,11 @@
-// type First<T extends any[]> = T extends [] ? never : T[0]
+// type First<T extends any[]> = any
+type First<T extends any[]> = T extends [] ? never : T[0]
 // type First<T extends any[]> = T['length'] extends 0 ? never : T[0]
 // type First<T extends any[]> = T[0] extends T[number] ? T[0] : never
-type First<T extends any[]> = T extends [infer First, ...infer Rest] ? First : never
+// type First<T extends any[]> = T extends [infer First, ...infer Rest] ? First : never
 
-type arr = [1,2,3]
+type arr = [1,2,3, '4']
 type union = arr[number]
-
-
-
-
 
 
 
